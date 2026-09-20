@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div class="logo-circle">SC</div>
+      <div>
+        <h1>Student ID Card Generator</h1>
+        <p class="subtitle">Upload your Excel sheet and photos to generate ID cards</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Step 1: Upload Excel -->
+    <div class="upload-card" id="excel-card">
+      <div class="step-badge">Step 1</div>
+      <h2>Upload Excel Sheet</h2>
+      <p>File should have columns: Name, Roll Number, Date of Birth, Photo Filename</p>
+      <label class="upload-btn" for="excel-input">
+        Choose Excel File (.xlsx)
+      </label>
+      <input type="file" id="excel-input" accept=".xlsx" hidden />
+      <p class="file-status" id="excel-status">No file chosen</p>
+    </div>
+
+    <!-- Step 2: Upload ZIP -->
+    <div class="upload-card" id="zip-card">
+      <div class="step-badge">Step 2</div>
+      <h2>Upload Photos (ZIP)</h2>
+      <p>ZIP file should contain all student photos named exactly as in the Excel sheet</p>
+      <label class="upload-btn" for="zip-input">
+        Choose ZIP File
+      </label>
+      <input type="file" id="zip-input" accept=".zip" hidden />
+      <p class="file-status" id="zip-status">No file chosen</p>
+    </div>
+
+    <!-- Generate Button -->
+    <div class="generate-wrapper">
+      <button id="generate-btn" disabled>Generate ID Cards</button>
+    </div>
+
+    <!-- Cards Output Area -->
+    <div id="output-section" class="hidden">
+      <h2 class="output-heading">Generated ID Cards</h2>
+      <div id="cards-container"></div>
+    </div>
+
+  </main>
+
+  <!-- Libraries (we'll add these in Phase 3 & 4) -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
